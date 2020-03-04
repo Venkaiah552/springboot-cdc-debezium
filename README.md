@@ -14,27 +14,34 @@ Applications that don’t need the level of fault tolerance and reliability Kafk
 
 ## Starting the SpringBoot application
 Go to the folder springboot-cdc-debezium, run the command
+```
 mvn spring-boot:run
+```
 
 
 ## Student table
-$ CREATE TABLE public.student
-$ (
-$    id integer NOT NULL,
-$    address character varying(255),
-$    email character varying(255),
-$    name character varying(255),
-$    CONSTRAINT student_pkey PRIMARY KEY (id)
-$ );
+```
+ CREATE TABLE public.student
+ (
+    id integer NOT NULL,
+    address character varying(255),
+    email character varying(255),
+    name character varying(255),
+    CONSTRAINT student_pkey PRIMARY KEY (id)
+ );
+ ```
 
 ## Scripts to Insert, Update and Delete a record on Postgres
+```
 $ INSERT INTO STUDENT(ID, NAME, ADDRESS, EMAIL) VALUES('1','Jack','Dallas, TX','jack@gmail.com');
 
 $ UPDATE STUDENT SET EMAIL='jill@gmail.com', NAME='Jill' WHERE ID = 1; 
 
 $ DELETE FROM STUDENT WHERE ID = 1;
+```
 
 ## H2 commands to test if CDC worked !
+```
 $ SELECT * FROM STUDENT;
-
+```
 
